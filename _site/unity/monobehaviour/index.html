@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>첫번째 게시글 - HideOnCode</title>
-<meta name="description" content="Monobe">
+<!-- begin _includes/seo.html --><title>Monobehaviour LifeCycle - HideOnCode</title>
+<meta name="description" content="유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다. 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.">
 
 
   <meta name="author" content="Fixyoo">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="HideOnCode">
-<meta property="og:title" content="첫번째 게시글">
-<meta property="og:url" content="http://localhost:4000/unity/new-years-eve-is-awesome/">
+<meta property="og:title" content="Monobehaviour LifeCycle">
+<meta property="og:url" content="http://localhost:4000/unity/monobehaviour/">
 
 
-  <meta property="og:description" content="Monobe">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2011-12-31T00:00:00+09:00">
+  <meta property="og:description" content="유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다. 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-12-10T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/unity/new-years-eve-is-awesome/">
+
+<link rel="canonical" href="http://localhost:4000/unity/monobehaviour/">
 
 
 
@@ -264,11 +264,88 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">첫번째 게시글</h1>
+      <h1 id="page-title" class="page__title">Monobehaviour LifeCycle</h1>
     
-    <h1 id="monobe">Monobe</h1>
+    <p>유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.<br />
+이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.</p>
 
-<p><strong>Hello world</strong></p>
+<hr />
+<p><br />
+<strong>1. Unity 공식문서</strong></p>
+
+<blockquote>
+  <p><strong><em>Description</em></strong><br />
+MonoBehaviour는 모든 스크립트가 상속받는 기본 클래스입니다.<br />
+Javascript를 사용하는 경우에, 자동으로 MonoBehaviour를 상속받습니다. C# 또는 Boo언어를 사용하는 경우에는 명시적으로 MonoBehaviour를 상속받아야 합니다.<br /></p>
+</blockquote>
+
+<p>즉, MonoBehaviour 클래스는 유니티 스크립트를 사용하기 위해서 반드시 <strong>상속받아야하는</strong> 클래스이다.<br />
+MonoBehaviour 또한 클래스의 상속을 받는데 계속 찾아들어가면 결국 최상위 클래스는 Object 클래스임을 알 수 있다.
+<br /></p>
+<ul>
+  <li>Object &gt; Component &gt; Behaviour &gt; MonoBehaviour 순서로 상속</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">namespace</span> <span class="nn">UnityEngine</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">MonoBehaviour</span> <span class="p">:</span> <span class="n">Behaviour</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">MonoBehaviour</span><span class="p">();</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<p><a href="https://docs.unity3d.com/kr/530/ScriptReference/Object.html">object 클래스</a></p>
+
+<hr />
+<p><strong>2.생명주기(LifeCycle)</strong>
+<br /></p>
+
+<figure>
+  <img src="../../assets/images/monobehaviour.png" alt="" />
+  <figcaption><a>출처 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=zparkx&amp;logNo=220324890387</a></figcaption>
+</figure>
+
+<p>이 ‘Monobehaviour’가 Scene에서 살아가는 일정한 흐름이 있다. 
+<br />
+엔진에서 자동으로 호출해주는 함수들인데 이 패턴의 흐름을 모아 ‘생명 주기(Life cycle)’라고 한다.
+<br /></p>
+
+<p>주요 메소드 몇 가지만 추려서 정리해보았다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">name</th>
+      <th style="text-align: center">기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Awake()</td>
+      <td style="text-align: center">Awake는 스크립트 인스턴스가 로딩될 때 호출됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Start()</td>
+      <td style="text-align: center">Start는 Update메소드가 처음 호출되기 바로 전에 호출됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Update()</td>
+      <td style="text-align: center">Update는 MonoBehaviour가 활성화 되어 있는 경우에, 매 프레임마다 호출됩니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Destroy()</td>
+      <td style="text-align: center">게임오브젝트, 컴포넌트나 애셋을 삭제합니다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DontDestroyOnLoad()</td>
+      <td style="text-align: center">새로운 Scene이 로드될때 자동으로 파괴되지 않는 target 오브젝트를 만듭니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://docs.unity3d.com/kr/530/ScriptReference/MonoBehaviour.html">MonoBehavior</a></p>
+
 
   </div>
 </div>

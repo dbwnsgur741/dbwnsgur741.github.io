@@ -1,3 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-10T16:40:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">첫번째 게시글</title><link href="http://localhost:4000/unity/new-years-eve-is-awesome/" rel="alternate" type="text/html" title="첫번째 게시글" /><published>2011-12-31T00:00:00+09:00</published><updated>2011-12-31T00:00:00+09:00</updated><id>http://localhost:4000/unity/new-years-eve-is-awesome</id><content type="html" xml:base="http://localhost:4000/unity/new-years-eve-is-awesome/">&lt;h1 id=&quot;monobe&quot;&gt;Monobe&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-10T18:14:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/monobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
+이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Hello world&lt;/strong&gt;&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="Unity" /><category term="Unity" /><summary type="html">Monobe</summary></entry></feed>
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;1. Unity 공식문서&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;Description&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+MonoBehaviour는 모든 스크립트가 상속받는 기본 클래스입니다.&lt;br /&gt;
+Javascript를 사용하는 경우에, 자동으로 MonoBehaviour를 상속받습니다. C# 또는 Boo언어를 사용하는 경우에는 명시적으로 MonoBehaviour를 상속받아야 합니다.&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;즉, MonoBehaviour 클래스는 유니티 스크립트를 사용하기 위해서 반드시 &lt;strong&gt;상속받아야하는&lt;/strong&gt; 클래스이다.&lt;br /&gt;
+MonoBehaviour 또한 클래스의 상속을 받는데 계속 찾아들어가면 결국 최상위 클래스는 Object 클래스임을 알 수 있다.
+&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Object &amp;gt; Component &amp;gt; Behaviour &amp;gt; MonoBehaviour 순서로 상속&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-c# highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;UnityEngine&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MonoBehaviour&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Behaviour&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MonoBehaviour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.unity3d.com/kr/530/ScriptReference/Object.html&quot;&gt;object 클래스&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.생명주기(LifeCycle)&lt;/strong&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;../../assets/images/monobehaviour.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;&lt;a&gt;출처 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=zparkx&amp;amp;logNo=220324890387&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;이 ‘Monobehaviour’가 Scene에서 살아가는 일정한 흐름이 있다. 
+&lt;br /&gt;
+엔진에서 자동으로 호출해주는 함수들인데 이 패턴의 흐름을 모아 ‘생명 주기(Life cycle)’라고 한다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;주요 메소드 몇 가지만 추려서 정리해보았다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;name&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Awake()&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Awake는 스크립트 인스턴스가 로딩될 때 호출됩니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Start()&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Start는 Update메소드가 처음 호출되기 바로 전에 호출됩니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Update()&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Update는 MonoBehaviour가 활성화 되어 있는 경우에, 매 프레임마다 호출됩니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Destroy()&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;게임오브젝트, 컴포넌트나 애셋을 삭제합니다.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DontDestroyOnLoad()&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;새로운 Scene이 로드될때 자동으로 파괴되지 않는 target 오브젝트를 만듭니다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.unity3d.com/kr/530/ScriptReference/MonoBehaviour.html&quot;&gt;MonoBehavior&lt;/a&gt;&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="Unity" /><category term="Unity" /><summary type="html">유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다. 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.</summary></entry></feed>
