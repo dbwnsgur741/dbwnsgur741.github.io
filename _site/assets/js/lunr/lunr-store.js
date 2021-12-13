@@ -4,4 +4,10 @@ var store = [{
         "tags": ["Unity"],
         "url": "/unity/monobehaviour/",
         "teaser": null
+      },{
+        "title": "React Native 환경세팅",
+        "excerpt":"[React Native] MAC(M1)개발 환경 세팅 CLI 로 React Native 시작하기 node (v) : 14.18.1 npm (v) : 7.20.0 1.Homebrew를 통한 Node, Watchman 설치 $ brew install node $ brew install watchman 2.새 프로젝트 생성 $ npx react-native init SampleProject 3.빌드 (Android) $ npx react-native run-android 4.빌드 (IOS) $ npx react-native...","categories": ["React Native"],
+        "tags": ["React Native"],
+        "url": "/react%20native/react/",
+        "teaser": null
       }]

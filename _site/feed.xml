@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-10T18:14:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/monobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T18:41:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/react/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/react</id><content type="html" xml:base="http://localhost:4000/react%20native/react/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;CLI 로 React Native 시작하기&lt;/strong&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node (v) : 14.18.1
+npm (v) : 7.20.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1homebrew를-통한-node-watchman-설치&quot;&gt;1.Homebrew를 통한 Node, Watchman 설치&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;node
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;watchman
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2새-프로젝트-생성&quot;&gt;2.새 프로젝트 생성&lt;/h3&gt;
+
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npx react-native init SampleProject
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;3빌드-android&quot;&gt;3.빌드 (Android)&lt;/h3&gt;
+
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npx react-native run-android
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;&lt;img src=&quot;/assets/images/react_android_1.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;4빌드-ios&quot;&gt;4.빌드 (IOS)&lt;/h3&gt;
+
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;npx react-native run-ios
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/react_ios_1.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;참고 : &lt;a href=&quot;https://reactnative.dev/docs/environment-setup&quot;&gt;개발환경세팅&lt;/a&gt;&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="React Native" /><category term="React Native" /><summary type="html">[React Native] MAC(M1)개발 환경 세팅</summary></entry><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/monobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.&lt;/p&gt;
 
 &lt;hr /&gt;
