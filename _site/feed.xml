@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T18:41:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/react/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/react</id><content type="html" xml:base="http://localhost:4000/react%20native/react/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T23:46:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/ReactNative-setting/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dsetting</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-setting/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;
@@ -39,7 +39,170 @@ npm (v) : 7.20.0
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;참고 : &lt;a href=&quot;https://reactnative.dev/docs/environment-setup&quot;&gt;개발환경세팅&lt;/a&gt;&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="React Native" /><category term="React Native" /><summary type="html">[React Native] MAC(M1)개발 환경 세팅</summary></entry><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/monobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
+&lt;p&gt;참고 : &lt;a href=&quot;https://reactnative.dev/docs/environment-setup&quot;&gt;개발환경세팅&lt;/a&gt;&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="React Native" /><category term="React Native" /><summary type="html">[React Native] MAC(M1)개발 환경 세팅</summary></entry><entry><title type="html">Web 브라우저의 동작원리 -1</title><link href="http://localhost:4000/web/web-browser/" rel="alternate" type="text/html" title="Web 브라우저의 동작원리 -1" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/web/%5Bweb%5Dbrowser</id><content type="html" xml:base="http://localhost:4000/web/web-browser/">&lt;p&gt;주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다.&lt;br /&gt;
+(ex. 크롬, 사파리, 파이어폭스 등)&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;1. 브라우저란?&lt;/strong&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;웹 브라우저는 동기(Synchronous)적으로 (HTML + CSS), Javascript 언어를 해석하여 내용을 화면에 보여주는 응용 소프트웨어입니다.
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;동기적-vs-비동기적-&quot;&gt;동기적 vs 비동기적 ?&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;구분&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;방식&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;동기적&lt;br /&gt;(Synchronous)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;어떤 작업을 요청했을 때 그 작업이 종료될때 까지 기다린 후 다음 작업을 수행하는 방식&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;비동기적(Asynchronous)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;어떤 작업을 요청했을 때 그 작업이 종료될때 까지 기다리지 않고 다른 작업을 하고 있다가, 요청했던 작업이 종료되면 그에 대한 추가 작업을 수행하는 방식&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;details&gt;
+&lt;summary&gt;브라우저가 동기적인 이유 ?&lt;/summary&gt;
+&lt;div&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;em&gt;script 태그를 body 태그 하단에 위치시키는 아이디어에서 찾을 수 있다.&lt;/em&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;HTML 요소들이 script 로딩 지연으로 인해 렌더링에 지장 받는 일이 발생하지 않아 페이지 로딩 시간이 단축된다.&lt;/li&gt;
+      &lt;li&gt;DOM이 완성되기 전에 script가 DOM을 조작한다면 에러가 발생한다.&lt;/li&gt;
+      &lt;li&gt;자바스크립트는 렌더링 엔진이 아닌 자바스크립트 엔진이 처리한다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/details&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;2. 브라우저의 주요기능&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자 인터페이스
+    &lt;ul&gt;
+      &lt;li&gt;주소 표시줄, 이전/다음 버튼, 북마크 메뉴 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;브라우저 엔진
+    &lt;ul&gt;
+      &lt;li&gt;사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;렌더링 엔진
+    &lt;ul&gt;
+      &lt;li&gt;요청한 콘텐츠를 표시&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;통신
+    &lt;ul&gt;
+      &lt;li&gt;HTTP 요청과 같은 네트워크 호출에 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UI 백엔드
+    &lt;ul&gt;
+      &lt;li&gt;콤보 박스와 창 같은 기본적인 장치를 그림. 플랫폼에서 명시하지 않은 일반적인 인터페이스로서, OS 사용자 인터페이스 체계를 사용.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자바스크립트 해석기
+    &lt;ul&gt;
+      &lt;li&gt;자바스크립트 코드를 해석하고 실행.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자료 저장소
+    &lt;ul&gt;
+      &lt;li&gt;이 부분은 자료를 저장하는 계층이다. (쿠키,스토리지 등..)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;align-center&quot; style=&quot;width:500px&quot;&gt;
+  &lt;img src=&quot;../../assets/images/browser-1.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;align-center&quot;&gt;&lt;a&gt;출처 : https://d2.naver.com/helloworld/59361&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&quot;렌더링-엔진이란&quot;&gt;렌더링 엔진이란?&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;렌더링 엔진의 역할은 요청 받은 내용을 브라우저 화면에 표시하는 일이다.&lt;/em&gt;&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;렌더링 엔진은 HTML 및 XML 문서와 이미지를 표시할 수 있다. 
+플러그인이나 브라우저 확장 기능을 이용해 PDF와 같은 다른 유형도 표시할 수 있다.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;details&gt;
+&lt;summary&gt;브라우저 렌더링 엔진들&lt;/summary&gt;
+&lt;div&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;브라우저&lt;/th&gt;
+          &lt;th style=&quot;text-align: left&quot;&gt;렌더링 엔진&lt;/th&gt;
+          &lt;th&gt; &lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;파이어폭스&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;게코(Gecko)&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;사파리,크롬&lt;/td&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;웹킷(Webki)&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+  &lt;/div&gt;
+&lt;/details&gt;
+
+&lt;h5 id=&quot;렌더링-엔진의-동작과정&quot;&gt;렌더링 엔진의 동작과정&lt;/h5&gt;
+
+&lt;figure class=&quot;align-center&quot; style=&quot;width:500px&quot;&gt;
+  &lt;img src=&quot;../../assets/images/browser-2.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption&gt;&lt;a&gt;출처 : https://d2.naver.com/helloworld/59361&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;HTML 문서를 파싱하고 “콘텐츠 트리” 내부에서 태그를 DOM 노드로 변환하고 외부 CSS 파일과 함께 포함된 스타일 요소도 파싱한다. 스타일 정보와 HTML 표시 규칙은 “렌더 트리”라고 부르는 또 다른 트리를 생성한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;렌더 트리는 색상 또는 면적과 같은 시각적 속성이 있는 사각형을 포함하고 있는데 정해진 순서대로 화면에 표시된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;렌더 트리 생성이 끝나면 배치가 시작되는데 이것은 각 노드가 화면의 정확한 위치에 표시되는 것을 의미한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;렌더링 엔진은 좀 더 나은 사용자 경험을 위해 가능하면 빠르게 내용을 표시하는데 모든 HTML을 파싱할 때까지 기다리지 않고 배치와 그리기 과정을 시작한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Fixyoo</name></author><category term="Web" /><category term="Web" /><category term="Browser" /><summary type="html">주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등)</summary></entry><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/Unity-monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/%5BUnity%5Dmonobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/Unity-monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -74,7 +237,7 @@ MonoBehaviour 또한 클래스의 상속을 받는데 계속 찾아들어가면 
 &lt;p&gt;&lt;strong&gt;2.생명주기(LifeCycle)&lt;/strong&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;figure&gt;
+&lt;figure style=&quot;width: 70%&quot; class=&quot;align-center&quot;&gt;
   &lt;img src=&quot;../../assets/images/monobehaviour.png&quot; alt=&quot;&quot; /&gt;
   &lt;figcaption&gt;&lt;a&gt;출처 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=zparkx&amp;amp;logNo=220324890387&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;

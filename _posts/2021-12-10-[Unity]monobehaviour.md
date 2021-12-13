@@ -39,7 +39,7 @@ namespace UnityEngine
 <strong>2.생명주기(LifeCycle)</strong>
 <br>
 
-<figure>
+<figure style="width: 70%" class="align-center">
   <img src="../../assets/images/monobehaviour.png" alt="">
   <figcaption><a>출처 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=zparkx&logNo=220324890387</a></figcaption>
 </figure>
