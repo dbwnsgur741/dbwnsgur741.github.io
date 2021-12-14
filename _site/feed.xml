@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-14T11:40:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/ReactNative-setting/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dsetting</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-setting/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-14T17:29:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/ReactNative-setting/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dsetting</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-setting/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;
@@ -202,7 +202,84 @@ npm (v) : 7.20.0
   &lt;li&gt;
     &lt;p&gt;렌더링 엔진은 좀 더 나은 사용자 경험을 위해 가능하면 빠르게 내용을 표시하는데 모든 HTML을 파싱할 때까지 기다리지 않고 배치와 그리기 과정을 시작한다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Fixyoo</name></author><category term="Web" /><category term="Web" /><category term="Browser" /><summary type="html">주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등)</summary></entry><entry><title type="html">React Native 동작 원리</title><link href="http://localhost:4000/react%20native/ReactNative-work/" rel="alternate" type="text/html" title="React Native 동작 원리" /><published>2021-12-11T00:00:00+09:00</published><updated>2021-12-11T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dwork</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-work/">&lt;p&gt;[React Native] 동작 원리&lt;/p&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;파싱parsing&quot;&gt;파싱(parsing)&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;문서 파싱은, 브라우저가 코드를 이해하고 사용할 수 있는 구조로 변환하는 것을 의미&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;파싱 결과는 보통 문서 구조를 나타내는 노드 트리인데 파싱 트리(parse tree) 또는 문법 트리(syntax tree)라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;파싱은 어휘 분석과 구문 분석이라는 두 가지로 구분할 수 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;어휘 분석
+    &lt;ul&gt;
+      &lt;li&gt;자료를 토근으로 분해하는 과정&lt;/li&gt;
+      &lt;li&gt;토큰은 유효하게 구성된 단위의 집합체 (사전에 등장하는 모든 단어)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;구문 분석
+    &lt;ul&gt;
+      &lt;li&gt;언어의 구문 규칙을 적용하는 과정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;../../assets/images/react_3.png&quot; style=&quot;width:10%&quot; class=&quot;align-center&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;문서 소스로부터 파싱 트리를 만드는 과정&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;details&gt;
+&lt;summary&gt;파싱과정&lt;/summary&gt;
+&lt;div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;파싱 과정은 반복된다.&lt;/li&gt;
+      &lt;li&gt;파서는 보통 어휘 분석기로부터 새 토큰을 받아서 구문 규칙과 일치하는지 확인한다.&lt;/li&gt;
+      &lt;li&gt;규칙에 맞으면 토큰에 해당하는 노드가 파싱 트리에 추가되고 파서는 또 다른 토큰을 요청한다.&lt;/li&gt;
+      &lt;li&gt;규칙에 맞지 않으면 파서는 토큰을 내부적으로 저장하고 토큰과 일치하는 규칙이 발견될 때까지 요청한다.&lt;/li&gt;
+      &lt;li&gt;맞는 규칙이 없는 경우 예외로 처리하는데 이것은 문서가 유효하지 않고 구문 오류를 포함하고 있다는 의미다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/details&gt;
+
+&lt;h5 id=&quot;변환&quot;&gt;변환&lt;/h5&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;../../assets/images/react_4.png&quot; style=&quot;width:10%&quot; class=&quot;align-center&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;컴파일 과정&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;details&gt;
+&lt;summary&gt;변환과정&lt;/summary&gt;
+&lt;div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;파서 트리는 최종 결과물이 아니다.&lt;/li&gt;
+      &lt;li&gt;파싱은 보통 문서를 다른 양식으로 변환하는데 컴파일이 하나의 예가 된다.&lt;/li&gt;
+      &lt;li&gt;소스 코드를 기계 코드로 만드는 컴파일러는 파싱 트리 생성 후 이를 기계 코드 문서로 변환한다.&lt;/li&gt;
+    &lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/details&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;[참고자료]&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a&gt;https://gyoogle.dev/blog/web-knowledge/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a&gt;https://d2.naver.com/helloworld/59361&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Fixyoo</name></author><category term="Web" /><category term="Web" /><category term="Browser" /><summary type="html">주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등)</summary></entry><entry><title type="html">React Native 동작 원리</title><link href="http://localhost:4000/react%20native/ReactNative-work/" rel="alternate" type="text/html" title="React Native 동작 원리" /><published>2021-12-11T00:00:00+09:00</published><updated>2021-12-11T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dwork</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-work/">&lt;p&gt;[React Native] 동작 원리&lt;/p&gt;
 
 &lt;hr /&gt;
 
