@@ -17,7 +17,7 @@ var store = [{
         "url": "/react%20native/ReactNative-setting/",
         "teaser": null
       },{
-        "title": "Web 브라우저의 동작원리 -1",
+        "title": "Web 브라우저의 동작원리",
         "excerpt":"주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등) 1. 브라우저란? 웹 브라우저는 동기(Synchronous)적으로 (HTML + CSS), Javascript 언어를 해석하여 내용을 화면에 보여주는 응용 소프트웨어입니다. 동기적 vs 비동기적 ? 구분 방식   동기적 (Synchronous) 어떤 작업을 요청했을 때 그 작업이 종료될때...","categories": ["Web"],
         "tags": ["Web","Browser"],
         "url": "/web/web-browser/",
