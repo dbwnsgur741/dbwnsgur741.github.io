@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-13T23:46:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/ReactNative-setting/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dsetting</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-setting/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-14T11:40:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">React Native 환경세팅</title><link href="http://localhost:4000/react%20native/ReactNative-setting/" rel="alternate" type="text/html" title="React Native 환경세팅" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dsetting</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-setting/">&lt;p&gt;[React Native] MAC(M1)개발 환경 세팅&lt;/p&gt;
 
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;
@@ -202,7 +202,92 @@ npm (v) : 7.20.0
   &lt;li&gt;
     &lt;p&gt;렌더링 엔진은 좀 더 나은 사용자 경험을 위해 가능하면 빠르게 내용을 표시하는데 모든 HTML을 파싱할 때까지 기다리지 않고 배치와 그리기 과정을 시작한다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Fixyoo</name></author><category term="Web" /><category term="Web" /><category term="Browser" /><summary type="html">주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등)</summary></entry><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/Unity-monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/%5BUnity%5Dmonobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/Unity-monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
+&lt;/ol&gt;</content><author><name>Fixyoo</name></author><category term="Web" /><category term="Web" /><category term="Browser" /><summary type="html">주소창에 URL 또는 도메인을 입력하였을때 어떤 과정을 통해 웹 페이지가 보여지는지에 대하여 찾아보았다. (ex. 크롬, 사파리, 파이어폭스 등)</summary></entry><entry><title type="html">React Native 동작 원리</title><link href="http://localhost:4000/react%20native/ReactNative-work/" rel="alternate" type="text/html" title="React Native 동작 원리" /><published>2021-12-11T00:00:00+09:00</published><updated>2021-12-11T00:00:00+09:00</updated><id>http://localhost:4000/react%20native/%5BReactNative%5Dwork</id><content type="html" xml:base="http://localhost:4000/react%20native/ReactNative-work/">&lt;p&gt;[React Native] 동작 원리&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;가상-dom&quot;&gt;가상 DOM&lt;/h3&gt;
+
+&lt;details&gt;
+&lt;summary&gt;DOM이란?&lt;/summary&gt;
+&lt;div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;문서 객체 모델(Document Object Model)은 HTML문서나 XML문서에 접근하기 위한 일종의 인터페이스이다.&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;문서 내의 모든 요소의 목적과 특징을 정의하고, 각각의 요소에 접근하는 방법을 제공한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/details&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;화면이 어떤 모습이어야 하는지 개발자가 작성한 내용과 실제 화면에 렌더링되는 것 사이에 존재하는 레이어&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;리액트에서는 과도한 DOM의 수정을 막기 위하여 페이지의 변화를 바로 렌더링하지 않고 메모리에 존재하는 가상 DOM에서 변화가 필요한 곳을 계산하고 필요한 최소한의 변경사항만 렌더링 한다.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 70%&quot; class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;../../assets/images/react_1.png&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;state 변경 -&amp;gt; 차이점 계산 -&amp;gt; 다시 렌더링&lt;/figcaption&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;&lt;a&gt;출처 : https://ssollacc.tistory.com/14&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;리액트-네이티브-동작원리&quot;&gt;리액트 네이티브 동작원리&lt;/h3&gt;
+
+&lt;p&gt;리액트 네이티브는 브라우저의 DOM으로 렌더링하는 대신 objective-c API호출하여 iOS 컴포넌트로 렌더링하고, 자바 API를 호출하여 안드로이드 컴포넌트로 렌더링한다.&lt;br /&gt;&lt;br /&gt;
+웹 기반의 화면으로 최종 렌더링되는 대부분의 크로스 플랫폼 앱 개발 방법들과 구별되는 리액트 네이티브의 특징이다.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 100%&quot; class=&quot;align-center&quot;&gt;
+  &lt;img src=&quot;../../assets/images/react_2.jpg&quot; alt=&quot;&quot; /&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;다른 타깃으로 렌더링&lt;/figcaption&gt;
+  &lt;figcaption class=&quot;text-center&quot;&gt;&lt;a&gt;출처 : https://ssollacc.tistory.com/14&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;리액트-네이티브-앱-4-가지-스레드&quot;&gt;리액트 네이티브 앱 4 가지 스레드&lt;/h3&gt;
+
+&lt;h6 id=&quot;ui-thread--main-thread-&quot;&gt;UI Thread ( Main Thread )&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;기본 안드로이드 또는 iOS UI 렌더링에 사용&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;예를 들어, 안드로이드에서 이 스레드는 안드로이드 measure/layout/draw에 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;js-thread&quot;&gt;JS Thread&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;JS 스레드 또는 Javascript 스레드는 로직이 실행될 스레드&lt;/li&gt;
+  &lt;li&gt;예를 들어 애플리케이션의 자바스크립트 코드가 실행되고, API 호출이 이루어지고, 터치 이벤트가 처리되는 등의 스레드가 존재&lt;/li&gt;
+  &lt;li&gt;네이티브 뷰에 대한 업데이트는 일괄 처리되어 JS 스레드의 각 이벤트 루프 끝에서 네이티브 측으로 전달되며 마지막에 UI 스레드에서 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;native-modules-thread&quot;&gt;Native Modules Thread&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;때때로 앱이 플랫폼 API에 액세스 해야하는 경우의 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;render-thread&quot;&gt;Render Thread&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;Android L (5.0)에서만 리액트 네이티브 렌더링 스레드가 UI를 그리는데 사용되는 실제 OpenGL 명령 생성에 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;리액트-네이티브-동작-순서&quot;&gt;리액트 네이티브 동작 순서&lt;/h3&gt;
+
+&lt;p&gt;1) 앱 시작 시 메인 스레드 실행, JS 번들 로드&lt;/p&gt;
+
+&lt;p&gt;2) 자바스크립트 코드가 성공적으로 로드되면 메인 스레드는 다른 JS 스레드로 전송&lt;/p&gt;
+
+&lt;p&gt;3) React가 렌더링을 시작할 때 Reconciler는 “diffing”을 시작하고 새로운 가상 DOM(layout)을 생성하면 변경 사항을 다른 스레드로 전송 (Shadow Thread)&lt;/p&gt;
+
+&lt;p&gt;4) Shadow 스레드는 레이아웃을 계산한 다음 레이아웃 매개변수/객체를 메인(UI) 스레드로 전송&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Shadow Thread 는 Shadow nodes 를 만든다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;5) 메인 스레드만 화면에 무언가를 렌더링할 수 있기 때문에 Shadow 스레드는 생성된 레이아웃을 메인 스레드로 보내야 UI가 렌더링된다.&lt;/p&gt;</content><author><name>Fixyoo</name></author><category term="React Native" /><category term="React Native" /><summary type="html">[React Native] 동작 원리</summary></entry><entry><title type="html">Monobehaviour LifeCycle</title><link href="http://localhost:4000/unity/Unity-monobehaviour/" rel="alternate" type="text/html" title="Monobehaviour LifeCycle" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>http://localhost:4000/unity/%5BUnity%5Dmonobehaviour</id><content type="html" xml:base="http://localhost:4000/unity/Unity-monobehaviour/">&lt;p&gt;유니티에서 C# class를 생성하게 되면 자동으로 Monobehaviour를 상속받게 된다.&lt;br /&gt;
 이 Monobehaviour가 어떤 클래스이고 생명주기는 어떻게 되는지 정리해보았다.&lt;/p&gt;
 
 &lt;hr /&gt;
