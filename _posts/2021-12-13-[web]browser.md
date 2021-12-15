@@ -1,6 +1,6 @@
 ---
 layout: archive
-title:  "Web 브라우저의 동작원리"
+title:  "[Web] - 브라우저의 동작원리"
 categories:
     - Web
 tags:

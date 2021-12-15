@@ -1,6 +1,6 @@
 ---
 layout: archive
-title:  "React Native 동작 원리"
+title:  "[React Native] - 동작 원리"
 categories:
     - React Native
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: archive
-title:  "React Native 환경세팅"
+title:  "[React Native] - 환경세팅"
 categories:
     - React Native
 tags:
