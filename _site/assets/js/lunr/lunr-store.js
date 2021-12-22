@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[React Native] - Redux",
-        "excerpt":"Redux     ","categories": ["Redux"],
+        "excerpt":"Redux Redux 란? 애플리케이션 로직이 잘 구성되어 있고 앱이 예상대로 작동하는지 확인하는 상태 관리용 라이브러리 Redux를 사용하면 언제, 어디서, 왜, 어떻게 애플리케이션 상태가 업데이트되는지에 관한 애플리케이션 코드를 쉽게 이해할 수 있다. 구성요소 Redux는 아래 5가지 핵심 파트로 구성되어있다. action reducer store dispatch selector Action Action은 type field 와 optional payload...","categories": ["Redux"],
         "tags": ["Redux"],
         "url": "/redux/ReactNative-Redux/",
         "teaser": null
