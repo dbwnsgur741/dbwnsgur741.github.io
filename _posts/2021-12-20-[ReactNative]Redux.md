@@ -134,13 +134,15 @@ store.dispatch(addTask('pick up laundry'))
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
  
-const Home = () => {
+class Home extends React.Component {
+  render() {
     return (
       <View style={styles.container}>
         <Text>Home!</Text>
       </View>
     )
-  }
+  }  
+}
 
 const styles = StyleSheet.create({
   container : {
@@ -160,13 +162,15 @@ export default Home;
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
  
-const Subjects = () => {
+class Subjects extends React.Component {
+  render() {
     return (
       <View style={styles.container}>
         <Text>Subjects!</Text>
       </View>
     )
-  }
+  }  
+}
 
 const styles = StyleSheet.create({
   container : {
@@ -212,21 +216,23 @@ import Subjects from './Subjects';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen
-          name="Subjects"
-          component={Subjects}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+          />
+          <Stack.Screen
+            name="Subjects"
+            component={Subjects}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+  }
 }
 export default App;
 ```
@@ -311,7 +317,7 @@ action은 ```type```과 ```payload```(optional)로 구성되어있다.
 1) SubjectsActions.js 파일 생성
 
 ```javascript
-export const addSubject = subjectsIndex => (
+export default addSubject = subjectsIndex => (
   {
     type: 'SELECT_SUBJECT',
     payload: subjectsIndex,
