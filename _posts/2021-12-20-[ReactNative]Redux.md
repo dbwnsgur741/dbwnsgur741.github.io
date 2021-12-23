@@ -5,6 +5,19 @@ categories:
     - Redux
 tags:
     - Redux
+gallery:
+  - url: /assets/images/redux_1.png
+    image_path: /assets/images/redux_1.png
+    alt: "placeholder image 1"
+    title: "Image 1 title caption"
+  - url: /assets/images/redux_2.png
+    image_path: /assets/images/redux_2.png
+    alt: "placeholder image 2"
+    title: "Image 2 title caption"
+  - url: /assets/images/redux_3.png
+    image_path: /assets/images/redux_3.png
+    alt: "placeholder image 3"
+    title: "Image 3 title caption"
 ---
 
 Redux
@@ -317,7 +330,7 @@ action은 ```type```과 ```payload```(optional)로 구성되어있다.
 1) SubjectsActions.js 파일 생성
 
 ```javascript
-export default addSubject = subjectsIndex => (
+export const addSubject = subjectsIndex => (
   {
     type: 'SELECT_SUBJECT',
     payload: subjectsIndex,
@@ -340,7 +353,6 @@ const subjectsReducer = (state = INITIAL_STATE, action) => {
       const { current,  all_subjects,} = state;
  
       //remove a subject from the all_subjects array
-       
       const addedSubject = all_subjects.splice(action.payload, 1);
  
       // put subject in current array
@@ -399,4 +411,122 @@ class App extends React.Component {
   }
 }
 ```
+---
+
+### 컴포넌트에 Redux 추가하기
+
+- ```connect()``` 함수로 컴포넌트에서 state 데이터를 사용가능하게 해준다.
+- ```connect()``` 함수를 사용하려면, store에 있는 state를 props로 매핑해주는 ```mapStateToProps``` 함수를 만들어야한다.
+
+```javascript
+//Home.js
+import React from 'react';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+ 
+class Home extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>You have { this.props.subjects.current.length } subjects.</Text>
+        <Button
+          title="Select more subjects"
+          onPress={() =>
+            this.props.navigation.navigate('Subjects')
+          }
+        />
+      </View>
+    );
+  }
+}
+ 
+ 
+const mapStateToProps = (state) => {
+  const { subjects } = state
+  return { subjects }
+};
+ 
+export default connect(mapStateToProps)(Home);
+```
+
+```javascript
+//Subjects.js
+import React from 'react';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+ 
+class Subjects extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>My Subjects!</Text>
+        />
+      </View>
+    );
+  }
+}
+ 
+//...
+ 
+const mapStateToProps = (state) => {
+  const { subjects } = state
+  return { subjects }
+};
+ 
+export default connect(mapStateToProps)(Subjects);
+```
+
+---
+
+### store에 액션 전송
+
+- ```dispatch``` 함수를 통하여 스토어에 액션을 전달한다.
+
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { addSubject } from './SubjectsActions';
+
+class Subjects extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Select Subjects Below!</Text>
+        {
+          this.props.subjects.all_subjects.map((subject, index) => (
+            <Button
+              key={ subject }
+              title={ `Add ${ subject }` }
+              onPress={() =>
+                this.props.dispatch(addSubject(index))
+              }
+            />
+          ))
+        }
+        <Button
+          title="Back to home"
+          onPress={() =>
+            this.props.navigation.navigate('Home')
+          }
+        />
+      </View>      
+    )
+  }
+}
+```
+---
+
+### 완성된 화면
+
+
+{% include gallery %}
+
+---
+
+###### 참고
+
+[완성코드](https://github.com/dbwnsgur741/redux_tutorial)<br>
+[using-redux-in-a-react-native-app](https://code.tutsplus.com/tutorials/using-redux-in-a-react-native-app--cms-36001)<br>
+
 
