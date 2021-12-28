@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-23T11:48:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">[React Native] - Redux</title><link href="http://localhost:4000/redux/ReactNative-Redux/" rel="alternate" type="text/html" title="[React Native] - Redux" /><published>2021-12-20T00:00:00+09:00</published><updated>2021-12-20T00:00:00+09:00</updated><id>http://localhost:4000/redux/%5BReactNative%5DRedux</id><content type="html" xml:base="http://localhost:4000/redux/ReactNative-Redux/">&lt;p&gt;Redux&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-28T22:35:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">HideOnCode</title><subtitle>An amazing website.</subtitle><author><name>Fixyoo</name></author><entry><title type="html">[Design Pattern] - Abstract Factory pattern</title><link href="http://localhost:4000/design%20pattern/DesignPattern-AbstractFactory/" rel="alternate" type="text/html" title="[Design Pattern] - Abstract Factory pattern" /><published>2021-12-26T00:00:00+09:00</published><updated>2021-12-26T00:00:00+09:00</updated><id>http://localhost:4000/design%20pattern/%5BDesignPattern%5DAbstractFactory</id><content type="html" xml:base="http://localhost:4000/design%20pattern/DesignPattern-AbstractFactory/">&lt;p&gt;추상 팩토리 패턴(Abstract Factory pattern)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;추상 팩토리 패턴이란?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;객체지향 디자인 패턴이다. &lt;br /&gt;
+추상 팩토리 패턴은 상세화된 서브 클래스를 정의하지 않고도 서로 관련성이 있거나 독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공한다.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Fixyoo</name></author><category term="Design Pattern" /><category term="Design Pattern" /><summary type="html">추상 팩토리 패턴(Abstract Factory pattern)</summary></entry><entry><title type="html">[React Native] - Redux</title><link href="http://localhost:4000/redux/ReactNative-Redux/" rel="alternate" type="text/html" title="[React Native] - Redux" /><published>2021-12-20T00:00:00+09:00</published><updated>2021-12-20T00:00:00+09:00</updated><id>http://localhost:4000/redux/%5BReactNative%5DRedux</id><content type="html" xml:base="http://localhost:4000/redux/ReactNative-Redux/">&lt;p&gt;Redux&lt;/p&gt;
 
 &lt;hr /&gt;
 
