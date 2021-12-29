@@ -30,13 +30,13 @@ var store = [{
         "teaser": null
       },{
         "title": "[React Native] - Redux",
-        "excerpt":"Redux Redux 란? 애플리케이션 로직이 잘 구성되어 있고 앱이 예상대로 작동하는지 확인하는 상태 관리용 라이브러리 Redux를 사용하면 언제, 어디서, 왜, 어떻게 애플리케이션 상태가 업데이트되는지에 관한 애플리케이션 코드를 쉽게 이해할 수 있다. 구성요소 Redux는 아래 5가지 핵심 파트로 구성되어있다. action reducer store dispatch selector Action Action은 type field 와 optional payload...","categories": ["Redux"],
-        "tags": ["Redux"],
-        "url": "/redux/ReactNative-Redux/",
+        "excerpt":"Redux Redux 란? 애플리케이션 로직이 잘 구성되어 있고 앱이 예상대로 작동하는지 확인하는 상태 관리용 라이브러리 Redux를 사용하면 언제, 어디서, 왜, 어떻게 애플리케이션 상태가 업데이트되는지에 관한 애플리케이션 코드를 쉽게 이해할 수 있다. 구성요소 Redux는 아래 5가지 핵심 파트로 구성되어있다. action reducer store dispatch selector Action Action은 type field 와 optional payload...","categories": ["React Native"],
+        "tags": ["React Native"],
+        "url": "/react%20native/ReactNative-Redux/",
         "teaser": null
       },{
         "title": "[Design Pattern] - Abstract Factory pattern",
-        "excerpt":"추상 팩토리 패턴(Abstract Factory pattern)     추상 팩토리 패턴이란?      객체지향 디자인 패턴이다.   추상 팩토리 패턴은 상세화된 서브 클래스를 정의하지 않고도 서로 관련성이 있거나 독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공한다.    ","categories": ["Design Pattern"],
+        "excerpt":"추상 팩토리 패턴(Abstract Factory pattern) 추상 팩토리 패턴이란? 객체지향 디자인 패턴이다. 추상 팩토리 패턴은 상세화된 서브 클래스를 정의하지 않고도 서로 관련성이 있거나 독립적인 여러 객체의 군을 생성하기 위한 인터페이스를 제공한다. 특징 객체 구성을 통해 만든다. 연관된 객체들의 집합을 만들기 위한 추상 형식을 제공한다. 제품이 생산되는 방법은 추상 형식의 서브 클래스에...","categories": ["Design Pattern"],
         "tags": ["Design Pattern"],
         "url": "/design%20pattern/DesignPattern-AbstractFactory/",
         "teaser": null

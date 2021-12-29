@@ -2,9 +2,9 @@
 layout: archive
 title:  "[React Native] - Redux"
 categories:
-    - Redux
+    - React Native
 tags:
-    - Redux
+    - React Native
 gallery:
   - url: /assets/images/redux_1.png
     image_path: /assets/images/redux_1.png
